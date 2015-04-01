@@ -1,0 +1,7 @@
+<resources>
+
+    <color name="borders_color">#000000</color>
+    <color name="buttons_color">#99CCFF</color>
+    <color name="buttons_pressed_color">#FFB2CB</color>
+
+</resources>
