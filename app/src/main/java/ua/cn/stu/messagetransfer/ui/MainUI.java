@@ -12,7 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.net.UnknownHostException;
+
 import ua.cn.stu.messagetransfer.R;
+import ua.cn.stu.messagetransfer.work.Sender;
 
 
 public class MainUI extends Activity {
@@ -20,13 +24,13 @@ public class MainUI extends Activity {
     private static MainUI me = null;
 
     private String ipAddr = null;
+    //private int port = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ui);
-        me = this;
-        initButtons();
+        additionalInit();
     }
 
     @Override
@@ -58,7 +62,29 @@ public class MainUI extends Activity {
     }
 
     private void sendMessage(){
-        //TODO
+        Sender sender = null;
+        try {
+            sender = new Sender(getIpAddress(), getPort());
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Can't connect!\nUnknown host name!",
+                    Toast.LENGTH_LONG
+            ).show();
+            return;
+        }
+        String msg = getMessageText();
+        try {
+            sender.sendMessage(msg);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Can't send message(IOException)!\nCheck what\'s up with host!",
+                    Toast.LENGTH_LONG
+            ).show();
+        }
     }
 
     private void goSettings(){
@@ -77,6 +103,11 @@ public class MainUI extends Activity {
                 sendMessage();
             }
         });
+    }
+
+    private void additionalInit(){
+        me = this;
+        initButtons();
     }
 
     public static MainUI getInstance(){
@@ -99,6 +130,10 @@ public class MainUI extends Activity {
 
     public String getIpAddress(){
         return ipAddr;
+    }
+
+    public int getPort(){
+        return 33333;
     }
 
     public String getMessageText(){

@@ -3,7 +3,7 @@ package ua.cn.stu.messagetransfer.work;
 import java.util.regex.Pattern;
 
 /**
- * Created by Admin on 30.03.2015.
+ * Created by WarlordGrey on 30.03.2015.
  */
 public class Validator {
 
