@@ -6,7 +6,7 @@
     <!-- Example General settings -->
     <string name="edit_ip_address">IP edit_ip_address</string>
 
-    <string name="pref_header_ip">IP settings</string>
+    <string name="pref_header_ip">Connection settings</string>
 
     <string name="pref_title_social_recommendations">Enable social recommendations</string>
     <string name="pref_description_social_recommendations">Recommendations for people to contact
