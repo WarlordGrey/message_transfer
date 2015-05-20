@@ -7,5 +7,6 @@
     <dimen name="border_size">3px</dimen>
     <dimen name="edit_text_text_size">20sp</dimen>
     <dimen name="button_text_size">20sp</dimen>
+    <dimen name="login_lbl_size">30sp</dimen>
 
 </resources>

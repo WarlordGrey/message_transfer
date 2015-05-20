@@ -24,12 +24,22 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:text="@string/btn_send_txt"
         android:textSize="@dimen/button_text_size"
         android:id="@+id/btnSend"
         android:layout_below="@+id/textView"
         android:layout_gravity="bottom"
         android:background="@drawable/rounded_button" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_sign_up_txt"
+        android:textSize="@dimen/button_text_size"
+        android:id="@+id/btnSignUp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_button"
+        android:layout_weight="0.5" />
 
 </LinearLayout>

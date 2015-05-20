@@ -35,12 +35,12 @@ public class Sender {
         out.newLine();
         out.flush();
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        boolean resultOk = toBoolean(in.readLine());
-        if(resultOk){
-            out.write(msg);
-            out.newLine();
-            out.flush();
-        }
+//        boolean resultOk = toBoolean(in.readLine());
+//        if(resultOk){
+        out.write(msg);
+        out.newLine();
+        out.flush();
+//        }
         in.close();
         out.close();
         socket.close();
@@ -52,19 +52,19 @@ public class Sender {
                 new OutputStreamWriter(socket.getOutputStream())
         );
         out.write(COMMAND_LOGIN);
-        out.newLine();
+        //out.newLine();
         out.flush();
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        boolean resultOk = toBoolean(in.readLine());
+//        boolean resultOk = toBoolean(in.readLine());
         boolean goodLogin = false;
-        if(resultOk){
-            out.write(login);
-            out.newLine();
-            out.write(password);
-            out.newLine();
-            out.flush();
-            goodLogin = toBoolean(in.readLine());
-        }
+//        if(resultOk){
+        out.write(login);
+        out.newLine();
+        out.write(password);
+        out.newLine();
+        out.flush();
+        goodLogin = toBoolean(in.readLine());
+//        }
         in.close();
         out.close();
         socket.close();
