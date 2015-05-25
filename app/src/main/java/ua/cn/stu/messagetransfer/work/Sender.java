@@ -52,7 +52,7 @@ public class Sender {
                 new OutputStreamWriter(socket.getOutputStream())
         );
         out.write(COMMAND_LOGIN);
-        //out.newLine();
+        out.newLine();
         out.flush();
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 //        boolean resultOk = toBoolean(in.readLine());

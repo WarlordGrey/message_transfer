@@ -79,7 +79,7 @@ public class LoginActivity extends Activity {
         try {
             String login = getLogin();
             String password = getPassword();
-            close(sender.isLoginCorrect(login,password));
+            close(!sender.isLoginCorrect(login,password));
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(
